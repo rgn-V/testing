@@ -13,23 +13,11 @@
     }
     const os = getOS();
 
-    function redirectAppStore() {
-        if (os === 'iOS') {
-            window.location.href = 'https://apps.apple.com/us/app/tweety-ai-content-writing-bot/id6450050261';
-        }
-    }
-    function redirectPlayMarket() {
-        if (os === 'Android') {
-            window.location.href = 'https://play.google.com/store/apps/details?id=ru.fourpda.client&hl=ru';
-        }
-    }
-    function redirectDesktop() {
-        if (os === 'Other') {
-            window.location.href = 'https://foresko.com/';
-        }
+    const locations = {
+        'iOS': 'https://apps.apple.com/us/app/tweety-ai-content-writing-bot/id6450050261',
+        'Android': 'https://play.google.com/store/apps/details?id=ru.fourpda.client&hl=ru',
+        'Other': 'https://foresko.com/'
     }
 
-    redirectAppStore();
-    redirectPlayMarket();
-    redirectDesktop();
+    window.location.href = locations[os]
 </script>
